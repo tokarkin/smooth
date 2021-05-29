@@ -1,0 +1,15 @@
+<ion-card>
+  <ion-card-content>
+    <p *ngIf='resultItem.address.road'>Street: {{resultItem.address.road}}</p>
+    <p *ngIf='resultItem.address.house_number'>Number: {{resultItem.address.house_number}}</p>
+    <p *ngIf='resultItem.address.postcode'>
+      PostalCode: {{resultItem.address.postcode}}
+    </p>
+    <p *ngIf='resultItem.address.city'>
+      City: {{resultItem.address.city}}
+    </p>
+    <p *ngIf='resultItem.address.country'>
+      Country: {{resultItem.address.country}}
+    </p>
+  </ion-card-content>
+</ion-card>

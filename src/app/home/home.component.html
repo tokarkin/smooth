@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="no-padding-toolbar" color='primary'>
+    <ion-title align="center">Test Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div [formGroup]='searchForm'>
+    <div class="search">
+      <ion-input type="text" formControlName="searchInput" placeholder="Search by street"></ion-input>
+    </div>
+    <ion-list color='primary'>
+      <ion-radio-group formControlName="country">
+        <ion-list-header>
+          <ion-label>Select Country</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Ukraine</ion-label>
+          <ion-radio slot="start" value="Ukraine"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Germany</ion-label>
+          <ion-radio slot="start" value="Germany"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Great Britain</ion-label>
+          <ion-radio slot="start" value="Great Britain"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+  <div *ngIf='foundedResults$ | async as foundedResults'>
+    <div *ngFor='let item of foundedResults'>
+      <app-result-item [resultItem]='item'></app-result-item>
+    </div>
+    <h3 class="info_msg" *ngIf='foundedResults.length === 0'>Sorry no results found...</h3>
+  </div>
+ 
+</ion-content>

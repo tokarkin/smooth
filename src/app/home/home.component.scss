@@ -1,0 +1,14 @@
+.search{
+    padding: 20px;
+    ion-input {
+        border: 1px solid gray;
+        border-radius: 10px;
+        --padding-start: 10px;
+    }
+}
+.info_msg{
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+    font-weight: 400;
+}
